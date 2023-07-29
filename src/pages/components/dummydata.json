@@ -1,0 +1,32 @@
+[
+  {
+    "id": "8e4f471d-9129-4627-9ba5-2be62665a4ce",
+    "event": {
+      "title": "Pelatihan Membuat Aplikasi",
+      "subTitle": "Pelatihan framework untuk membuat aplikasi mobile yang mantap"
+    },
+    "organizer": {
+      "name": "udemy",
+      "logo": "https://play-lh.googleusercontent.com/dsCkmJE2Fa8IjyXERAcwc5YeQ8_NvbZ4_OI8LgqyjILpXUfS5YhEcnAMajKPrZI-og=w240-h480-rw",
+      "detail": "Online Course"
+    },
+    "startEvent": "1972-05-20T02:00:07.945Z",
+    "endEvent": "1980-05-20T02:00:07.945Z",
+    "status": "incoming"
+  },
+  {
+    "id": "8e4f471d-9129-4627-9ba5-2be62665a4ce",
+    "event": {
+      "title": "Webinar Tes Wawasan Kebangsaan",
+      "subTitle": "mengukur kesetiaan bernegara dengan tes TWK"
+    },
+    "organizer": {
+      "name": "KPK",
+      "logo": "https://play-lh.googleusercontent.com/dsCkmJE2Fa8IjyXERAcwc5YeQ8_NvbZ4_OI8LgqyjILpXUfS5YhEcnAMajKPrZI-og=w240-h480-rw",
+      "detail": "Vendor Pelatihan"
+    },
+    "startEvent": "2023-05-21T02:00:07.945Z",
+    "endEvent": "2023-05-31T02:00:07.945Z",
+    "status": "running"
+  }
+]
