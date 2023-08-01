@@ -15,9 +15,13 @@ import {
   ThemeIcon,
   Paper,
   Stack,
+  ActionIcon,
+  Menu,
+  Tabs,
 } from '@mantine/core';
 import SideNavbar from '@/pages/components/layout/Navbar';
 import {
+  IconBell,
   IconCheck,
   IconCircles,
   IconPlaylistX,
@@ -61,6 +65,32 @@ export default function Dashboard() {
                 icon={<IconSearch size="0.8rem" />}
               />
               <Group>
+                <Menu shadow="md" width={430} position="bottom-end" withArrow>
+                  <Menu.Target>
+                    <ActionIcon variant="subtle" size="lg">
+                      <IconBell size="1rem" />
+                    </ActionIcon>
+                  </Menu.Target>
+                  <Menu.Dropdown p="xl">
+                    <Group position="apart" mb="xl">
+                      <Title order={3}>Notifikasi</Title>
+                    </Group>
+                    <Tabs defaultValue="all">
+                      <Tabs.List>
+                        <Tabs.Tab value="all">Semua</Tabs.Tab>
+                        <Tabs.Tab value="archived">Diarsipkan</Tabs.Tab>
+                      </Tabs.List>
+
+                      <Tabs.Panel value="all" pt="xs">
+                        Gallery tab content
+                      </Tabs.Panel>
+
+                      <Tabs.Panel value="archived" pt="xs">
+                        Messages tab content
+                      </Tabs.Panel>
+                    </Tabs>
+                  </Menu.Dropdown>
+                </Menu>
                 <Badge size="lg" radius="xs" variant="outline">
                   karyawan
                 </Badge>
