@@ -6,6 +6,7 @@ import {
   ColorSchemeProvider,
   MantineProvider,
 } from '@mantine/core';
+import '@fontsource/inter';
 // import { Notifications } from '@mantine/notifications';
 // import { QueryClientProvider } from '@tanstack/react-query';
 
