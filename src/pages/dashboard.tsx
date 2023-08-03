@@ -13,7 +13,7 @@ import {
   IconPlaylistX,
   IconX,
 } from '@tabler/icons-react';
-import DashboardTable from '@/pages/components/DashboardTable';
+import DashboardTable from '@/components/pages/dashboard/DashboardTable';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 
 export default function Dashboard() {

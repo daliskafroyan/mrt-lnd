@@ -1,0 +1,50 @@
+[
+  {
+    "id": "8e4f471d-9129-4627-9ba5-2be62665a4ce",
+    "user": {
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "avatar": "JD"
+    },
+    "event": {
+      "title": "Pelatihan Membuat Aplikasi",
+      "subTitle": "Pelatihan framework untuk membuat aplikasi mobile yang mantap"
+    },
+    "submitDate": "1978-05-20T02:00:07.945Z",
+    "startEvent": "1979-05-20T02:00:07.945Z",
+    "endEvent": "1980-05-20T02:00:07.945Z",
+    "status": "berlangsung"
+  },
+  {
+    "id": "8e4f471d-9129-4627-9ba5-2be62664a4ce",
+    "user": {
+      "name": "Phoenix Bakir",
+      "email": "pakbakir@gmail.com",
+      "avatar": "PB"
+    },
+    "event": {
+      "title": "Pelatihan Sikil",
+      "subTitle": "Sikil kiri sikil kanan sikil sakti"
+    },
+    "submitDate": "2020-01-05T02:00:07.945Z",
+    "startEvent": "2020-02-20T02:00:07.945Z",
+    "endEvent": "2021-05-19T02:00:07.945Z",
+    "status": "selesai"
+  },
+  {
+    "id": "8e4f421d-9129-4627-9ba5-2be62665a4ce",
+    "user": {
+      "name": "Pakri Bakir",
+      "email": "pakbakir@gmail.com",
+      "avatar": "PB"
+    },
+    "event": {
+      "title": "Pelatihan Sikil",
+      "subTitle": "Sikil kiri sikil kanan sikil sakti"
+    },
+    "submitDate": "2020-01-05T02:00:07.945Z",
+    "startEvent": "2020-02-20T02:00:07.945Z",
+    "endEvent": "2021-05-19T02:00:07.945Z",
+    "status": "overdue"
+  }
+]

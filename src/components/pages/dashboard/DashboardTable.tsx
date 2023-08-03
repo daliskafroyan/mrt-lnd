@@ -11,7 +11,7 @@ import {
 import dayjs from 'dayjs';
 import { DataTable, DataTableSortStatus } from 'mantine-datatable';
 import { useEffect, useState } from 'react';
-import data from './dummydata.json';
+import data from '../../dummydata.json';
 import { sortBy } from 'lodash';
 
 const PAGE_SIZE = 15;
