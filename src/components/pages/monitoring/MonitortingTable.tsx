@@ -6,12 +6,14 @@ import {
   createStyles,
   Avatar,
   Group,
+  Button,
 } from '@mantine/core';
 import dayjs from 'dayjs';
 import { DataTable, DataTableSortStatus } from 'mantine-datatable';
 import { useEffect, useState } from 'react';
 import data from '../../dummymonitoringdata.json';
 import { sortBy } from 'lodash';
+import Link from 'next/link';
 
 const PAGE_SIZE = 15;
 
@@ -146,6 +148,27 @@ export default function MonitoringTable() {
                 <Badge color="grey" radius="xs">
                   selesai
                 </Badge>
+              );
+            },
+          },
+          {
+            accessor: 'actions',
+            title: 'Aksi',
+            render: ({ id, status }) => {
+              if (status === 'selesai') {
+                return (
+                  <Button variant="subtle" disabled radius="xs" compact>
+                    Penyesuaian IDP
+                  </Button>
+                );
+              }
+
+              return (
+                <Link href={`/monitoring/${id}`}>
+                  <Button variant="subtle" radius="xs" compact>
+                    Penyesuaian IDP
+                  </Button>
+                </Link>
               );
             },
           },
