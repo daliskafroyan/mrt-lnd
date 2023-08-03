@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   createStyles,
   Navbar,
@@ -15,7 +15,10 @@ import {
   IconTimeline,
   IconPencilMinus,
   IconHome,
+  IconListSearch,
 } from '@tabler/icons-react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -25,7 +28,6 @@ const useStyles = createStyles((theme) => ({
 
   footer: {
     paddingTop: theme.spacing.md,
-    marginTop: theme.spacing.md,
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
     }`,
@@ -84,35 +86,38 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const data = [
-  { link: '', label: 'Dashboard', icon: IconHome },
-  { link: '', label: 'Planning', icon: IconPencilMinus },
-  { link: '', label: 'Monitoring', icon: IconTimeline },
-  { link: '', label: 'Evaluasi', icon: IconClipboard },
+  { link: '/dashboard', label: 'Dashboard', icon: IconHome },
+  { link: '/list-idp', label: 'List IDP', icon: IconListSearch },
+  { link: '/planning', label: 'Planning', icon: IconPencilMinus },
+  { link: '/monitoring', label: 'Monitoring', icon: IconTimeline },
+  { link: '/evaluasi', label: 'Evaluasi', icon: IconClipboard },
 ];
 
 export default function SideNavbar() {
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState('Billing');
+  const [active, setActive] = useState('/dashboard');
+
+  const { asPath: pathname } = useRouter();
+
+  useEffect(() => {
+    setActive(pathname);
+  }, [pathname]);
 
   const links = data.map((item) => (
-    <a
+    <Link
       className={cx(classes.link, {
-        [classes.linkActive]: item.label === active,
+        [classes.linkActive]: item.link === active,
       })}
       href={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
-      }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
-    </a>
+    </Link>
   ));
 
   return (
-    <Navbar height={700} width={{ sm: 300 }} p="md">
+    <Navbar height={700} width={{ sm: 300 }} p="md" h="100vh">
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
           <Image alt="mrt logo" src="/mrt-logo.png" width="130" height="36" />
@@ -121,23 +126,15 @@ export default function SideNavbar() {
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>
-        <a
-          href="#"
-          className={classes.link}
-          onClick={(event) => event.preventDefault()}
-        >
+        <Link href="#" className={classes.link}>
           <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
           <span>Change account</span>
-        </a>
+        </Link>
 
-        <a
-          href="#"
-          className={classes.link}
-          onClick={(event) => event.preventDefault()}
-        >
+        <Link href="#" className={classes.link}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
-        </a>
+        </Link>
       </Navbar.Section>
     </Navbar>
   );

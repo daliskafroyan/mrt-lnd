@@ -1,22 +1,27 @@
 import { Title, Paper, Stack } from '@mantine/core';
+import {
+  ListIDPHardskillTable,
+  ListIDPSoftskillTable,
+} from '@/components/pages/list-idp';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import MonitoringTable from '@/components/pages/monitoring/MonitortingTable';
 
-export default function Monitoring() {
+export default function ListIDP() {
   return (
     <DashboardLayout>
       <Stack spacing="lg">
         <Title
           order={3}
-          fw="bold"
           sx={(theme) => ({
             color: theme.colors.gray[8],
           })}
         >
-          Monitoring
+          List Individual Development Plan
         </Title>
         <Paper shadow="xs" withBorder>
-          <MonitoringTable />
+          <ListIDPSoftskillTable />
+        </Paper>
+        <Paper shadow="xs" withBorder>
+          <ListIDPHardskillTable />
         </Paper>
       </Stack>
     </DashboardLayout>

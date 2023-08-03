@@ -1,20 +1,11 @@
-import {
-  Text,
-  Group,
-  Title,
-  Card,
-  ThemeIcon,
-  Paper,
-  Stack,
-} from '@mantine/core';
-import {
-  IconCheck,
-  IconCircles,
-  IconPlaylistX,
-  IconX,
-} from '@tabler/icons-react';
-import DashboardTable from '@/components/pages/dashboard/DashboardTable';
 import DashboardLayout from '@/components/layout/DashboardLayout';
+import { Stack, Title, Group, Card, ThemeIcon, Text } from '@mantine/core';
+import {
+  IconCircles,
+  IconCheck,
+  IconX,
+  IconPlaylistX,
+} from '@tabler/icons-react';
 
 export default function Dashboard() {
   return (
@@ -98,9 +89,6 @@ export default function Dashboard() {
             </Title>
           </Card>
         </Group>
-        <Paper shadow="xs" withBorder>
-          <DashboardTable />
-        </Paper>
       </Stack>
     </DashboardLayout>
   );

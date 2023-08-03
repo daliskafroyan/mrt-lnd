@@ -5,7 +5,6 @@ import {
   Image,
   Text,
   Badge,
-  Select,
   createStyles,
 } from '@mantine/core';
 import dayjs from 'dayjs';
@@ -26,7 +25,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function DashboardTable() {
+export function ListIDPSoftskillTable() {
   const [page, setPage] = useState(1);
   const [records, setRecords] = useState(data.slice(0, PAGE_SIZE));
 
@@ -60,16 +59,12 @@ export default function DashboardTable() {
               color: theme.colors.gray[9],
             })}
           >
-            List Pelatihan IDP
+            Soft Skill IDP
           </Text>
           <Text c="dimmed">
-            Semua kegiatan yang dapat diikuti oleh karyawan
+            Kegiatan soft skil yang dapat diikuti oleh karyawan
           </Text>
         </Stack>
-        <Select
-          value="softskill"
-          data={[{ value: 'softskill', label: 'Soft Skill Competency' }]}
-        />
       </Group>
       <DataTable
         classNames={classes}

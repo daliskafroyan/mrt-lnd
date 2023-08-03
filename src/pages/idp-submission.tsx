@@ -19,24 +19,24 @@ import { useState } from 'react';
 
 export default function IDPSubmission() {
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
-  const [isDiajukan, setIsDiajukan] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   return (
     <DashboardLayout>
       <Box p="xl">
         <Group position="apart">
           <Group>
             <Title order={4}>Form Pengajuan IDP</Title>
-            {isDiajukan ? (
+            {isSubmitted ? (
               <Badge size="lg" radius="xs" variant="light">
                 diajukan
               </Badge>
             ) : null}
           </Group>
-          {isDiajukan ? null : (
+          {isSubmitted ? null : (
             <Button
               variant="default"
               leftIcon={<IconPencil />}
-              onClick={() => setIsDiajukan(!isDiajukan)}
+              onClick={() => setIsSubmitted(!isSubmitted)}
             >
               Edit
             </Button>
@@ -129,12 +129,12 @@ export default function IDPSubmission() {
           </Stack>
         </Group>
         <Group position="right" mt="xl">
-          <Button variant="default" disabled={!isDiajukan}>
+          <Button variant="default" disabled={!isSubmitted}>
             Batal
           </Button>
           <Button
-            onClick={() => setIsDiajukan(!isDiajukan)}
-            disabled={!isDiajukan}
+            onClick={() => setIsSubmitted(!isSubmitted)}
+            disabled={!isSubmitted}
           >
             Simpan
           </Button>
